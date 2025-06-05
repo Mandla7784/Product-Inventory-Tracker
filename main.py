@@ -5,8 +5,9 @@ from product import Product
 
 def main()-> None:
     stock = [] # stock to keep track of available items
-    
-    
+    product_name = input("Enter prduct Name")
+    category = input("Category : ")
+    price =  
 
 
 
