@@ -79,12 +79,13 @@ def marking_product_as_out(products:list) -> None:
             
         
 def main()-> None:
-    product_name = input("Enter prduct Name: ")
-    category = input("Category : ")
-    price =  float(input("Price: "))
-    quantity  = int(input("Enter quantity: "))
+  
     
     for _ in range(5):
+        product_name = input("Enter prduct Name: ")
+        category = input("Category : ")
+        price =  float(input("Price: "))
+        quantity  = int(input("Enter quantity: "))
         add_new_product(product_name , category , price , quantity)
        
     print(available_stock)
