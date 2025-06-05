@@ -14,6 +14,20 @@ def add_new_product(name , cater , price , quant):
             case "n":
                 print("Product already exists ")
 
+#looping on the products list and format to  tabels  data
+def list_products(products:list):pass
+
+def serach_by_name():
+    pass
+
+def  update_stock():
+    pass
+    
+    
+#looping on the stcoks for each product / check quantitty if its zero then out 
+def marking_product_as_out(products):
+    pass      
+
 def main()-> None:
  
     product_name = input("Enter prduct Name")
@@ -27,3 +41,4 @@ def main()-> None:
 
 if __name__=="__main__":
     main()
+
