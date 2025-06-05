@@ -1,31 +1,46 @@
-{
-    "isInstock": "False",
-    "name": "shoe ",
-    "category": "cloth ",
-    "stock": "45",
-    "Representation": "Product: Name->  shoe  Category -> cloth  stock -> 45 "
-}{
-    "isInstock": "False",
-    "name": "T-shirt",
-    "category": "cloth ",
-    "stock": "45",
-    "Representation": "Product: Name->  T-shirt Category -> cloth  stock -> 45 "
-}{
-    "isInstock": "False",
-    "name": "Bluthtooth speakers",
-    "category": "music ",
-    "stock": "45",
-    "Representation": "Product: Name->  Bluthtooth speakers Category -> music  stock -> 45 "
-}{
-    "isInstock": "False",
-    "name": "table",
-    "category": "furniture",
-    "stock": "12",
-    "Representation": "Product: Name->  table Category -> furniture stock -> 12 "
-}{
-    "isInstock": "False",
-    "name": "bag ",
-    "category": "accessories ",
-    "stock": "45",
-    "Representation": "Product: Name->  bag  Category -> accessories  stock -> 45 "
-}
+[
+    {
+        "isInstock": "False",
+        "name": "shoe ",
+        "category": "cloth ",
+        "stock": "66",
+        "Representation": "Product: Name->  shoe  Category -> cloth  stock -> 66 "
+    }
+][
+    {
+        "isInstock": "False",
+        "name": "shoe ",
+        "category": "cloth ",
+        "stock": "66",
+        "Representation": "Product: Name->  shoe  Category -> cloth  stock -> 66 "
+    },
+    {
+        "isInstock": "False",
+        "name": "bacnh ",
+        "category": "food",
+        "stock": "2",
+        "Representation": "Product: Name->  bacnh  Category -> food stock -> 2 "
+    }
+][
+    {
+        "isInstock": "False",
+        "name": "shoe ",
+        "category": "cloth ",
+        "stock": "66",
+        "Representation": "Product: Name->  shoe  Category -> cloth  stock -> 66 "
+    },
+    {
+        "isInstock": "False",
+        "name": "bacnh ",
+        "category": "food",
+        "stock": "2",
+        "Representation": "Product: Name->  bacnh  Category -> food stock -> 2 "
+    },
+    {
+        "isInstock": "False",
+        "name": "speakrs",
+        "category": "music ",
+        "stock": "52",
+        "Representation": "Product: Name->  speakrs Category -> music  stock -> 52 "
+    }
+]
