@@ -23,7 +23,7 @@ def list_products(products:list) -> None:
 
 
 def search_by_name(products:list)-> Product:
-    choice = input("Please enter the name you would like to see").lower()
+    choice = input("Please enter the name you would like to see: ").lower()
     for i in  products:
         if choice == i.name:
   
@@ -55,6 +55,7 @@ def save_to_json(products:list)->None:
         
             for i in products:
                 productDict = {
+                    "isInstock":f"{i.outOfStock}",
                 "name":f"{i.name}",
                 "category":f"{i.category}",
                 "stock":f"{i.stock}",
@@ -78,25 +79,27 @@ def marking_product_as_out(products:list) -> None:
             
         
 def main()-> None:
- 
     product_name = input("Enter prduct Name: ")
     category = input("Category : ")
     price =  float(input("Price: "))
     quantity  = int(input("Enter quantity: "))
     
-    add_new_product(product_name , category , price , quantity)
-    print(available_stock)
-    list_products(available_stock)
-    print(search_by_name(available_stock))
-    
-    choice = input("Wich item want to update").lower()
-    
-    for item in available_stock:
-        if choice == item.name:
-            update_stock(item)
-        else:
-            print(f"{choice}not found")
-            
+    for _ in range(5):
+        add_new_product(product_name , category , price , quantity)
+        print(available_stock)
+        list_products(available_stock)
+        print(search_by_name(available_stock))
+        
+        choice = input("Wich item want to update").lower()
+        
+        for item in available_stock:
+            if choice == item.name:
+                update_stock(item)
+                print(f"{item.name} Updated [🧦]  new_stock=> {item.stock} ")
+                list_products(available_stock)
+            else:
+                print(f"{choice}not found")
+                
     save_to_json(available_stock)
 
 if __name__=="__main__":
