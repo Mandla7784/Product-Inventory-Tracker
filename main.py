@@ -1,17 +1,18 @@
 # TODO  create a simple Python program that manages a small product inventory system
 from product import Product
 
-stock = [] # stock to keep track of available items
+available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant):
     new_product = Product(name , price , cater , quant )
     
-    if new_product.name in stock and new_product.stock == quant:
-      choice =   print(f"{new_product.name} already exist do you want to add more ? (Y/N)")
+    if new_product.name in available_stock and new_product.stock == quant:
+        choice =   input(f"{new_product.name} already exist do you want to add more ? (Y/N)").lower()
     
-    
-    
-    
-
+        match choice:
+            case "y":
+               available_stock.append(new_product)
+            case "n":
+                print("Product already exists ")
 
 def main()-> None:
  
