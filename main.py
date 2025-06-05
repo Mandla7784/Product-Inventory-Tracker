@@ -1,6 +1,11 @@
 # TODO  create a simple Python program that manages a small product inventory system
 from product import Product
-from tabulate import tabulate
+from prettytable import PrettyTable
+
+
+
+
+
 
 available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant):
