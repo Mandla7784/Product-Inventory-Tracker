@@ -9,7 +9,7 @@ This is a simple **command-line inventory management system** built with Python.
 - Mark out-of-stock items
 - Save the product list to a JSON file
 
-> 🚧 This project is a work in progress and part of my internship learning journey at **Takealot**.
+> 🚧 This project is a work in progress and part of my internship learning journey at **Retail Store**.
 
 ---
 
