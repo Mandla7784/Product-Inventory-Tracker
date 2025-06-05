@@ -1,5 +1,6 @@
 # TODO  create a simple Python program that manages a small product inventory system
 from product import Product
+from tabulate import tabulate
 
 available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant):
@@ -15,15 +16,23 @@ def add_new_product(name , cater , price , quant):
                 print("Product already exists ")
 
 #looping on the products list and format to  tabels  data
-def list_products(products:list):pass
+def list_products(products:list) -> None:
+    for product in products:
+        pass
 
-def serach_by_name():
+def serach_by_name()-> str:
     pass
 
-def  update_stock():
+
+
+
+#takes the product and update ist quantity
+def  update_stock(product:Product)-> None:
     pass
     
-    
+   
+def save_to_json(products:list)->None:pass
+     
 #looping on the stcoks for each product / check quantitty if its zero then out 
 def marking_product_as_out(products):
     pass      
