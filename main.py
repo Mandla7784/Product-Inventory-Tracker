@@ -86,19 +86,22 @@ def main()-> None:
     
     for _ in range(5):
         add_new_product(product_name , category , price , quantity)
-        print(available_stock)
-        list_products(available_stock)
-        print(search_by_name(available_stock))
+       
+    print(available_stock)
+    list_products(available_stock)
+    print(search_by_name(available_stock))
         
-        choice = input("Wich item want to update").lower()
+    choice = input("Wich item want to update").lower()
         
-        for item in available_stock:
-            if choice == item.name:
-                update_stock(item)
-                print(f"{item.name} Updated [🧦]  new_stock=> {item.stock} ")
-                list_products(available_stock)
-            else:
-                print(f"{choice}not found")
+    for item in available_stock:
+        if choice == item.name:
+            update_stock(item)
+            print(f"{item.name} Updated [🧦]  new_stock=> {item.stock} ")
+            list_products(available_stock)
+        else:
+            print(f"{choice}not found")
+
+
                 
     save_to_json(available_stock)
 
