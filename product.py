@@ -5,6 +5,7 @@ class Product:
         self.category  = category
         self.stock = stock
         self.price = price
+        self.outOfStock = False
         
 
     def __repr__(self ):

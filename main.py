@@ -21,10 +21,10 @@ def add_new_product(name , cater , price , quant)-> None:
 #looping on the products list and format to  tabels  data
 def list_products(products:list) -> None:
     table = PrettyTable()
-    table.field_names = ["ProductName" , "Price","category","stock"]
+    table.field_names = ["ProductName" , "Price","category","stock" , "OutOfStock"]
  
     for product in products:
-        table.add_row([product.name , product.price , product.category , product.stock]) 
+        table.add_row([product.name , product.price , product.category , product.stock , product.outOfStock]) 
     print(table)
 
 
@@ -55,10 +55,15 @@ def  update_stock(product:Product)-> None:
 def save_to_json(products:list)->None:pass
      
 #looping on the stcoks for each product / check quantitty if its zero then out 
-def marking_product_as_out(products):
+def marking_product_as_out(products:list) -> None:
     
-          
-
+    for eachItem in products:
+        if eachItem.quanity == 0:
+            eachItem.outOfStock = True
+        else:
+            eachItem.outOfStock = False
+            
+        
 def main()-> None:
  
     product_name = input("Enter prduct Name")
