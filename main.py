@@ -28,9 +28,10 @@ def search_by_name(products:list)-> Product:
         if choice == i.name:
   
             print(i.__repr__())
-        else:
-            print("Product not found")
-        return i
+            return i
+    
+    print("Product not found")
+    return None
         
               
 
@@ -52,17 +53,17 @@ def save_to_json(products:list)->None:
         file_path.unlink()
          
         with open(file_path, "w+") as f:
-        
+            product_list  =[]
             for i in products:
-                productDict = {
+                product_list.append( {
                     "isInstock":f"{i.outOfStock}",
                 "name":f"{i.name}",
                 "category":f"{i.category}",
                 "stock":f"{i.stock}",
                 "Representation":f"{i.__repr__()}"
-                     }
+                     })
                 # f.writelines(f"{productDict}")
-                json.dump(productDict, f, indent=4)
+                json.dump(product_list, f, indent=4)
             f.close()
     else:
         print("Not found")
@@ -72,7 +73,7 @@ def save_to_json(products:list)->None:
 def marking_product_as_out(products:list) -> None:
     
     for eachItem in products:
-        if eachItem.quanity == 0:
+        if eachItem.stock == 0:
             eachItem.outOfStock = True
         else:
             eachItem.outOfStock = False
@@ -81,12 +82,12 @@ def marking_product_as_out(products:list) -> None:
 def main()-> None:
   
     
-    for _ in range(5):
-        product_name = input("Enter prduct Name: ")
-        category = input("Category : ")
-        price =  float(input("Price: "))
-        quantity  = int(input("Enter quantity: "))
-        add_new_product(product_name , category , price , quantity)
+ while True:
+    product_name = input("Enter prduct Name: ")
+    category = input("Category : ")
+    price =  float(input("Price: "))
+    quantity  = int(input("Enter quantity: "))
+    add_new_product(product_name , category , price , quantity)
        
     print(available_stock)
     list_products(available_stock)
