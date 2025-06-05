@@ -17,12 +17,12 @@ class Product:
    
    
     @classmethod
-    def main(self)-> None:
+    def master(self)-> None:
         pass
 
         
 if __name__=="__main__":
-    Product().main()    
+    Product().master()    
 
 
 
