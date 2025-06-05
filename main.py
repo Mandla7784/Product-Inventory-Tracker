@@ -1,8 +1,9 @@
 # TODO  create a simple Python program that manages a small product inventory system
 from product import Product
 from prettytable import PrettyTable
+from pathlib import Path
 
-
+import json
 
 available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant)-> None:
@@ -44,8 +45,28 @@ def  update_stock(product:Product)-> None:
     product.update_quanity(update_stock_num)
     
 
-def save_to_json(products:list)->None:pass
-     
+def save_to_json(products:list)->None:
+    
+    file_path = Path("data.json")
+    if file_path.exists():
+        file_path.unlink()
+         
+        with open(file_path, "w+") as f:
+        
+            for i in products:
+                productDict = {
+                "name":f"{i.name}",
+                "category":f"{i.category}",
+                "stock":f"{i.stock}",
+                "Representation":f"{i.__repr__()}"
+                     }
+                # f.writelines(f"{productDict}")
+                json.dump(productDict, f, indent=4)
+            f.close()
+    else:
+        print("Not found")
+            
+   
 #looping on the stcoks for each product / check quantitty if its zero then out 
 def marking_product_as_out(products:list) -> None:
     
@@ -58,10 +79,10 @@ def marking_product_as_out(products:list) -> None:
         
 def main()-> None:
  
-    product_name = input("Enter prduct Name")
+    product_name = input("Enter prduct Name: ")
     category = input("Category : ")
     price =  float(input("Price: "))
-    quantity  = int(input("Enter quantity"))
+    quantity  = int(input("Enter quantity: "))
     
     add_new_product(product_name , category , price , quantity)
     print(available_stock)
@@ -75,6 +96,8 @@ def main()-> None:
             update_stock(item)
         else:
             print(f"{choice}not found")
+            
+    save_to_json(available_stock)
 
 if __name__=="__main__":
     main()
