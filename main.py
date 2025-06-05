@@ -2,14 +2,6 @@
 from product import Product
 from prettytable import PrettyTable
 
-    # if new_product.name in available_stock and new_product.stock == quant:
-    #     choice =   input(f"{new_product.name} already exist do you want to add more ? (Y/N)").lower()
-    
-    #     match choice:
-    #         case "y":
-    #            available_stock.append(new_product)
-    #         case "n":
-    #             print("Product already exists ")
 
 
 available_stock = [] # stock to keep track of available items
@@ -87,3 +79,18 @@ def main()-> None:
 if __name__=="__main__":
     main()
 
+
+
+
+
+
+
+
+    # if new_product.name in available_stock and new_product.stock == quant:
+    #     choice =   input(f"{new_product.name} already exist do you want to add more ? (Y/N)").lower()
+    
+    #     match choice:
+    #         case "y":
+    #            available_stock.append(new_product)
+    #         case "n":
+    #             print("Product already exists ")
