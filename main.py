@@ -3,10 +3,6 @@ from product import Product
 from prettytable import PrettyTable
 
 
-
-
-
-
 available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant):
     new_product = Product(name , price , cater , quant )
@@ -22,8 +18,12 @@ def add_new_product(name , cater , price , quant):
 
 #looping on the products list and format to  tabels  data
 def list_products(products:list) -> None:
+    table = PrettyTable(["ProductName" , "Price","category","stock"])
+ 
     for product in products:
-        pass
+        table.add_row([product.name , product.price , product. category , product.stock])
+        
+    print(table)
 
 def serach_by_name()-> str:
     pass
