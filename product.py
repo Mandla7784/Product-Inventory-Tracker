@@ -6,9 +6,14 @@ class Product:
         self.stock = stock
         self.price = price
         
-    @classmethod   
-    def __repr__(self):
+
+    def __repr__(self ):
         return f"Product: Name->  {self.name} Category -> {self.category} stock -> {self.stock} "
+   
+   
+    def update_quanity(self , q):
+        self.stock += q
+   
    
     @classmethod
     def main(self)-> None:

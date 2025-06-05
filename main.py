@@ -2,45 +2,62 @@
 from product import Product
 from prettytable import PrettyTable
 
+    # if new_product.name in available_stock and new_product.stock == quant:
+    #     choice =   input(f"{new_product.name} already exist do you want to add more ? (Y/N)").lower()
+    
+    #     match choice:
+    #         case "y":
+    #            available_stock.append(new_product)
+    #         case "n":
+    #             print("Product already exists ")
+
 
 available_stock = [] # stock to keep track of available items
-def add_new_product(name , cater , price , quant):
+def add_new_product(name , cater , price , quant)-> None:
     new_product = Product(name , price , cater , quant )
-    
-    if new_product.name in available_stock and new_product.stock == quant:
-        choice =   input(f"{new_product.name} already exist do you want to add more ? (Y/N)").lower()
-    
-        match choice:
-            case "y":
-               available_stock.append(new_product)
-            case "n":
-                print("Product already exists ")
+    available_stock.append(new_product)
+    print("Product :{} successfully added ✅".format(name))
 
 #looping on the products list and format to  tabels  data
 def list_products(products:list) -> None:
-    table = PrettyTable(["ProductName" , "Price","category","stock"])
+    table = PrettyTable()
+    table.field_names = ["ProductName" , "Price","category","stock"]
  
     for product in products:
-        table.add_row([product.name , product.price , product. category , product.stock])
-        
+        table.add_row([product.name , product.price , product.category , product.stock]) 
     print(table)
 
-def serach_by_name()-> str:
-    pass
 
 
+def search_by_name(products:list)-> Product:
+    choice = input("Please enter the name you would like to see").lower()
+    for i in  products:
+        if choice == i.name:
+  
+            print(i.__repr__())
+        else:
+            print("Product not found")
+        return i
+        
+              
 
-
-#takes the product and update ist quantity
 def  update_stock(product:Product)-> None:
-    pass
+    """_summary_
+    #takes the product and update ist quantity
+
+    Args:
+        product (Product): _description_
+    """
+    update_stock_num  = int(input(f"How many stcoks want to add for {product.name} ? "))
+    product.update_quanity(update_stock_num)
     
-   
+
 def save_to_json(products:list)->None:pass
      
 #looping on the stcoks for each product / check quantitty if its zero then out 
 def marking_product_as_out(products):
-    pass      
+    
+          
 
 def main()-> None:
  
@@ -48,10 +65,19 @@ def main()-> None:
     category = input("Category : ")
     price =  float(input("Price: "))
     quantity  = int(input("Enter quantity"))
-
-
-
-
+    
+    add_new_product(product_name , category , price , quantity)
+    print(available_stock)
+    list_products(available_stock)
+    print(search_by_name(available_stock))
+    
+    choice = input("Wich item want to update").lower()
+    
+    for item in available_stock:
+        if choice == item.name:
+            update_stock(item)
+        else:
+            print(f"{choice}not found")
 
 if __name__=="__main__":
     main()
