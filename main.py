@@ -5,6 +5,8 @@ from pathlib import Path
 
 import json
 
+
+
 available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant)-> None:
     new_product = Product(name , price , cater , quant )
