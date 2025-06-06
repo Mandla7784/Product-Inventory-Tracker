@@ -1,1 +1,27 @@
-.venv
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+
+# macOS files
+.DS_Store
+
+# VS Code settings (if you use VS Code)
+.vscode/
+
+# Unit test cache
+.pytest_cache/
+*.cover
+coverage.xml
+
+# Logs
+*.log
