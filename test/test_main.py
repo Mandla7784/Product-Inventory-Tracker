@@ -19,7 +19,21 @@ class TestMain(unittest.TestCase):
         self.assertEqual(len(available_stock) , 1)
         self.assertEqual(available_stock[0].name , "mock_banana")
         
-       
+    def test_search_by_name(self):
+        available_stock.append(self.new_item)
+        item_name = "mock_banana"
+        not_item_name = "baaaaaaa"
+        bfound = False
+        
+        for i in available_stock:
+            if item_name == i.name:
+                bfound = True
+                
+        self.assertTrue( (item_name == self.new_item.name)  , bfound)
+        self.assertFalse((not_item_name == self.new_item.name) , not bfound)
+                
+        
+        
 
     
     
