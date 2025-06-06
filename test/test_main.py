@@ -40,8 +40,8 @@ class TestMain(unittest.TestCase):
         
     def test_update_stock (self):
         stock  = self.new_item.stock
-        updated_item_stock = stock + 1
-        self.assertEqual(updated_item_stock , 13)
+        updated_item_stock = self.new_item.update_quanity(stock)
+        self.assertEqual(updated_item_stock , 24)
         self.assertEqual((stock -1) , 11)
         
         

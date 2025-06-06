@@ -13,7 +13,7 @@ class Product:
    
    
     def update_quanity(self , q):
-        self.stock += q
+       return  self.stock + q
    
    
     @classmethod
