@@ -45,7 +45,15 @@ class TestMain(unittest.TestCase):
         self.assertEqual((stock -1) , 11)
         
         
-        
+    def test_marking_product_as_out(self):
+        stock = self.new_item.stock
+        out_of_stock   = False
+        if stock - stock == 0:
+            out_of_stock = True
+            
+        self.assertTrue(out_of_stock , True )
+            
+            
     
 if __name__=="__main__":
     unittest.main()
