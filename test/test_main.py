@@ -12,7 +12,7 @@ class TestMain(unittest.TestCase):
         
     def setUp(self):
         available_stock.clear()
-        new_item  = Product()
+        new_item  = Product("mock_banana",20 , "fruit" , 12)
         
             
         
