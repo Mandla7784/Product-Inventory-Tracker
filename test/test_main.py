@@ -1,7 +1,12 @@
 
+import sys
+import os
 import unittest
 
-from main import  available_stock 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
+from main import *
 from product import Product
 
 
