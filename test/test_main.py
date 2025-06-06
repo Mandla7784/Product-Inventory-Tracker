@@ -1,7 +1,7 @@
 
 import unittest
 
-from main import add_new_product , available_stock ,search_by_name ,update_stock 
+from main import  available_stock 
 from product import Product
 
 
@@ -33,10 +33,14 @@ class TestMain(unittest.TestCase):
         self.assertFalse((not_item_name == self.new_item.name) , not bfound)
                 
         
+    def test_update_stock (self):
+        stock  = self.new_item.stock
+        updated_item_stock = stock + 1
+        self.assertEqual(updated_item_stock , 13)
+        self.assertEqual((stock -1) , 11)
         
-
-    
-    
+        
+        
     
 if __name__=="__main__":
     unittest.main()
