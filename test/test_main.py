@@ -12,14 +12,15 @@ class TestMain(unittest.TestCase):
         
     def setUp(self):
         available_stock.clear()
-        new_item  = Product("mock_banana",20 , "fruit" , 12)
-        
-            
-        
+        self.new_item = Product("mock_banana",20 , "fruit" , 12)
+     
     def test_add_new_product(self):
+        available_stock.append(self.new_item)
+        self.assertEqual(len(available_stock) , 1)
+        self.assertEqual(available_stock[0].name , "mock_banana")
         
+       
 
-        pass
     
     
     
