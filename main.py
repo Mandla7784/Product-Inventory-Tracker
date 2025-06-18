@@ -22,8 +22,6 @@ def list_products(products:list) -> None:
         table.add_row([product.name , product.price , product.category , product.stock , product.outOfStock]) 
     print(table)
 
-
-
 def search_by_name(products:list)-> Product:
     choice = input("Please enter the name you would like to see: ").lower()
     for i in  products:
