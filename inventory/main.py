@@ -1,10 +1,9 @@
-# TODO  create a simple Python program that manages a small product inventory system
+
 from product import Product
 from prettytable import PrettyTable
 from pathlib import Path
 
 import json
-
 
 
 available_stock = [] # stock to keep track of available items
@@ -80,32 +79,67 @@ def marking_product_as_out(products:list) -> None:
             
         
 def main()-> None:
-  
-    
- while True:
-    product_name = input("Enter prduct Name: ")
-    category = input("Category : ")
-    price =  float(input("Price: "))
-    quantity  = int(input("Enter quantity: "))
-    add_new_product(product_name , category , price , quantity)
-       
-    print(available_stock)
-    list_products(available_stock)
-    print(search_by_name(available_stock))
-        
-    choice = input("Wich item want to update").lower()
-        
-    for item in available_stock:
-        if choice == item.name:
-            update_stock(item)
-            print(f"{item.name} Updated [🧦]  new_stock=> {item.stock} ")
-            list_products(available_stock)
-        else:
-            print(f"{choice}not found")
 
+    while True:
+        try:
+        
+                product_name = input("Enter product name: ")
+                category = input("Category: ")
 
-                
-    save_to_json(available_stock)
+                # Handle price input
+                try:
+                    price = float(input("Price: "))
+                except ValueError:
+                    print("Invalid price. Please enter a numeric value.")
+                    price = 0.0
+
+                # Handle quantity input
+                try:
+                    quantity = int(input("Enter quantity: "))
+                except ValueError:
+                    print("Invalid quantity. Please enter an integer.")
+                    quantity = 0
+
+                add_new_product(product_name, category, price, quantity)
+
+                print("\nAvailable Stock:")
+                print(available_stock)
+                list_products(available_stock)
+
+                # Search
+                try:
+                    result = search_by_name(available_stock)
+                    print(result)
+                except Exception as e:
+                    print(f"Error while searching: {e}")
+
+                # Update stock
+                choice = input("Which item do you want to update? ").lower()
+
+                found = False
+                for item in available_stock:
+                    if choice == item.name.lower():
+                        try:
+                            update_stock(item)
+                            print(f"{item.name} Updated [🧦]  new_stock => {item.stock}")
+                            list_products(available_stock)
+                            found = True
+                            break
+                        except Exception as e:
+                            print(f"Error updating stock: {e}")
+
+                if not found:
+                    print(f"{choice} not found.")
+
+                # Save to JSON
+                try:
+                    save_to_json(available_stock)
+                except Exception as e:
+                    print(f"Error saving data: {e}")
+
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+
 
 if __name__=="__main__":
     main()
