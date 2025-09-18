@@ -10,7 +10,7 @@ available_stock = [] # stock to keep track of available items
 def add_new_product(name , cater , price , quant)-> None:
     new_product = Product(name , price , cater , quant )
     available_stock.append(new_product)
-    print("Product :{} successfully added ✅".format(name))
+    print("Product :{} successfully added ".format(name))
 
 #looping on the products list and format to  tabels  data
 def list_products(products:list) -> None:
@@ -22,7 +22,7 @@ def list_products(products:list) -> None:
     print(table)
 
 def search_by_name(products:list)-> Product:
-    choice = input("Please enter the name you would like to see: ").lower()
+    choice = input("Please enter the product  you would like to see: ").lower()
     for i in  products:
         if choice == i.name:
   
