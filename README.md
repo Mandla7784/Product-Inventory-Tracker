@@ -45,7 +45,9 @@ inventory-manager/
 
 pip install prettytable
 
-python main.py
+
+python main.py  #use wich ever version you have for this 
+
 
 +-------------+--------+----------+--------+--------------+
 | ProductName | Price | Category | Stock | OutOfStock |
