@@ -15,6 +15,15 @@ fi
 sudo systemctl restart docker
 
 
+# Check and load veth kernel module
+lsmod | grep veth || sudo modprobe veth
+
+# Check Docker status
+sudo systemctl status docker
+
+echo "If you still see errors, consider reinstalling Docker or rebooting your system."
+
+
 # Build and run
 docker build -t product-inventory .
 docker run -it product-inventory

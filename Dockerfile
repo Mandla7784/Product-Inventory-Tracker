@@ -8,9 +8,9 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy inventory and test folders, and main.py
+
+# Copy inventory folder (contains main.py)
 COPY inventory/ ./inventory/
-COPY main.py ./main.py
 
 
 # EXPOSE 8000
