@@ -6,7 +6,7 @@
         "stock": "66",
         "Representation": "Product: Name->  shoe  Category -> cloth  stock -> 66 "
     }
-][
+,
     {
         "isInstock": "False",
         "name": "shoe ",
@@ -21,7 +21,7 @@
         "stock": "2",
         "Representation": "Product: Name->  bacnh  Category -> food stock -> 2 "
     }
-][
+,
     {
         "isInstock": "False",
         "name": "shoe ",
