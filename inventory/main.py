@@ -103,8 +103,19 @@ def main()-> None:
         try:
             option  = input("Do you want to add new product ? (yes/no): ").lower()
             if option != "yes":
-                print("Exiting the program.Good by ")
-                return
+                 choice = input("what would you like to do ? [view ,add  , delete] products")
+                 
+                 match choice:
+                    case "view":
+                         ...
+                         break
+                    case "add":
+                         ...
+                         break
+                    case "delete":
+                        ...
+                        break
+              
             else:
                 print("You can add new products to the inventory.")
         
