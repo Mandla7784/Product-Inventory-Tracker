@@ -103,7 +103,7 @@ def main()-> None:
         try:
             option  = input("Do you want to add new product ? (yes/no): ").lower()
             if option != "yes":
-                 choice = input("what would you like to do ? [view ,add  , delete] products")
+                 choice = input("what would you like to do instead of adding  ? [view, delete] products")
                  
                  match choice:
                     case "view":
