@@ -61,7 +61,7 @@ def save_to_json(products:list)->None:
                 "stock":f"{i.stock}",
                 "Representation":f"{i.__repr__()}"
                      })
-                # f.writelines(f"{productDict}")
+       
                 json.dump(product_list, f, indent=4)
             f.close()
     else:
