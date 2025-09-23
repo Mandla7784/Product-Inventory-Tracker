@@ -93,9 +93,20 @@ def main()-> None:
     print("🛒 Products for Sale:")
     for name, emoji in products.items():
         print(f"{emoji} {name}")
+        
+        
+        
+  
+        
 
     while True:
         try:
+            option  = input("Do you want to add new product ? (yes/no): ").lower()
+            if option != "yes":
+                print("Exiting the program.Good by ")
+                return
+            else:
+                print("You can add new products to the inventory.")
         
                 product_name = input("Enter product name: ")
                 category = input("Category: ")
