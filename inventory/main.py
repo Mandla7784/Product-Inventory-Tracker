@@ -79,6 +79,20 @@ def marking_product_as_out(products:list) -> None:
             
         
 def main()-> None:
+    print("Buy more with lowest price")
+    products = {
+        "Apple": "🍎",
+        "Sneakers": "👟",
+        "Smartphone": "📱",
+        "Toy": "🧸",
+        "Watch": "⌚",
+        "Headphones": "🎧",
+        "Laptop": "💻"
+    }
+
+    print("🛒 Products for Sale:")
+    for name, emoji in products.items():
+        print(f"{emoji} {name}")
 
     while True:
         try:
