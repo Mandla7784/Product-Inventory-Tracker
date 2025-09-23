@@ -25,5 +25,7 @@ echo "If you still see errors, consider reinstalling Docker or rebooting your sy
 
 
 # Build and run
+echo "buidling....."
+
 docker build -t product-inventory .
 docker run -it product-inventory
