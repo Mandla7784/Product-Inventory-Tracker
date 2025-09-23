@@ -95,7 +95,7 @@ def main()-> None:
     for name, info in products.items():
             emoji = info["emoji"]
             price = info["price"]
-            print(f"{emoji} {name:<12} - ${price:.2f}")
+            print(f"{emoji} {name:<12} - ZAR{price:.2f}")
                 
         
                 
