@@ -10,6 +10,11 @@ else
     exit 1
 fi
 
+
+# restarting 
+sudo systemctl restart docker
+
+
 # Build and run
 docker build -t product-inventory .
 docker run -it product-inventory
