@@ -1,0 +1,16 @@
+had this erro when i was contenerising my application 
+
+
+wtc@pop-os:~$ docker ps
+permission denied while trying to connect to 
+the Docker daemon socket at unix:///var/run/docker.sock:
+ Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.51/containers/json":
+  dial unix /var/run/docker.sock: connect: permission denied
+
+had to 
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+to allow my permissions for my user..

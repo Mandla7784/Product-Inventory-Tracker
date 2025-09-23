@@ -1,13 +1,11 @@
-# Ignore everything
-*
-
-# Allow files and directories
-!/file.txt
-!/src
-
-# Ignore unnecessary files inside allowed directories
-# This should go after the allowed directories
-**/*~
-**/*.log
-**/.DS_Store
-**/Thumbs.db
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.json
+.env
+venv/
+.env/
