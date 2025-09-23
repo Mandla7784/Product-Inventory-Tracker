@@ -1,4 +1,4 @@
-# Use official Python image
+
 FROM python:3.9
 
 # Set working directory
@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY inventory/ ./inventory/
 COPY main.py ./main.py
 
-# Expose port if needed (optional)
+
 # EXPOSE 8000
 
 # Run the application
