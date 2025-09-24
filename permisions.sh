@@ -36,3 +36,5 @@ if [[ "$OS" == "Linux"]]; then
 
     docker build -t product-inventory .
     docker run -it product-inventory
+
+    echo "build successfully.."
